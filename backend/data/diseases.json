@@ -1,0 +1,508 @@
+[
+  {
+    "id": "DIS-001",
+    "name": "Cholera",
+    "transmission": "Vibrio cholerae bacteria contamination from sewage",
+    "triggers": {
+      "waterSource": ["Open Well", "River", "Pond", "Canal"],
+      "h2sResult": "Positive",
+      "phRange": { "min": 5.0, "max": 7.5 },
+      "appearance": ["Turbid", "Brownish", "Clear"]
+    },
+    "symptoms": {
+      "required": ["Diarrhea", "Vomiting"],
+      "optional": ["Fever", "Abdominal Pain", "Dehydration", "Muscle Cramps"],
+      "minSymptomDurationDays": 1
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "Critical"
+    },
+    "recommendations": [
+      "Immediately stop consuming water from this source for drinking or cooking.",
+      "Boil water at a rapid rolling boil for at least 3-5 minutes before domestic use.",
+      "Disinfect the water source with bleaching powder (chlorine treatment) immediately.",
+      "Administer Oral Rehydration Salts (ORS) and seek urgent medical care at a hospital."
+    ]
+  },
+  {
+    "id": "DIS-002",
+    "name": "Typhoid Fever",
+    "transmission": "Salmonella typhi bacteria in feces contaminated water",
+    "triggers": {
+      "waterSource": ["Open Well", "River", "Pond", "Borewell"],
+      "h2sResult": "Positive",
+      "phRange": { "min": 5.5, "max": 7.6 }
+    },
+    "symptoms": {
+      "required": ["Fever"],
+      "optional": ["Headache", "Fatigue", "Abdominal Pain", "Diarrhea", "Vomiting"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "Critical"
+    },
+    "recommendations": [
+      "Do not consume untreated water from this source.",
+      "Use certified water purification methods (chlorine disinfection or boiling).",
+      "Maintain strict personal hygiene and sanitize food preparation utensils.",
+      "Consult a doctor for diagnostic blood tests and antibiotic treatment."
+    ]
+  },
+  {
+    "id": "DIS-003",
+    "name": "Acute Gastroenteritis (E. coli / Rotavirus)",
+    "transmission": "Pathogenic microbial pathogens from fecal pollution",
+    "triggers": {
+      "waterSource": ["Open Well", "Borewell", "River", "Pond", "Municipal Tap"],
+      "h2sResult": "Positive",
+      "phRange": { "min": 5.0, "max": 8.0 }
+    },
+    "symptoms": {
+      "required": ["Diarrhea"],
+      "optional": ["Vomiting", "Abdominal Pain", "Fever", "Nausea"],
+      "minSymptomDurationDays": 1
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Filter water using a sub-micron filter and boil before consumption.",
+      "Add chlorine liquid drops to household water storage vessels.",
+      "Ensure water storage containers are tightly covered and cleaned regularly.",
+      "Keep patient hydrated using clean boiled water with ORS."
+    ]
+  },
+  {
+    "id": "DIS-004",
+    "name": "Amoebic Dysentery (Amoebiasis)",
+    "transmission": "Entamoeba histolytica protozoan parasite cysts",
+    "triggers": {
+      "waterSource": ["Open Well", "River", "Pond"],
+      "h2sResult": "Positive",
+      "visibleParticles": true
+    },
+    "symptoms": {
+      "required": ["Diarrhea", "Abdominal Pain"],
+      "optional": ["Vomiting", "Fever", "Nausea", "Fatigue"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Filter water through a fine sand/ceramic filter to capture cysts, then boil it.",
+      "Avoid raw uncooked vegetables washed in this water source.",
+      "Thoroughly clean overhead tanks and household water storage systems.",
+      "Visit the health center for anti-parasitic treatment prescriptions."
+    ]
+  },
+  {
+    "id": "DIS-005",
+    "name": "Hepatitis A / E",
+    "transmission": "Fecal-oral viral contamination of public water systems",
+    "triggers": {
+      "waterSource": ["Municipal Tap", "Open Well", "River"],
+      "h2sResult": "Positive"
+    },
+    "symptoms": {
+      "required": ["Fatigue", "Vomiting"],
+      "optional": ["Fever", "Nausea", "Abdominal Pain", "Skin Irritation"],
+      "minSymptomDurationDays": 3
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Strictly boil all drinking and cooking water; viruses are resistant to mild chlorine.",
+      "Avoid communal open water storage systems.",
+      "Vaccinate susceptible family members against Hepatitis A.",
+      "Seek medical advice immediately for liver function evaluation."
+    ]
+  },
+  {
+    "id": "DIS-006",
+    "name": "Dental/Skeletal Fluorosis",
+    "transmission": "High naturally occurring inorganic fluoride minerals in deep aquifers",
+    "triggers": {
+      "waterSource": ["Borewell"],
+      "h2sResult": "Negative",
+      "phRange": { "min": 7.5, "max": 9.5 },
+      "taste": ["Salty", "Metallic"]
+    },
+    "symptoms": {
+      "required": [],
+      "optional": ["Skin Irritation", "Fatigue", "Stiff Joints", "Stained Teeth", "Headache"],
+      "minSymptomDurationDays": 5
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Avoid consuming raw borewell water; use activated alumina filters or RO plants.",
+      "Mix borewell water with rain-harvested water to reduce fluoride concentration.",
+      "Avoid using high-fluoride toothpaste in children and consume a calcium-rich diet.",
+      "Visit local health officers for skeletal fluorosis physical screening."
+    ]
+  },
+  {
+    "id": "DIS-007",
+    "name": "Arsenicosis (Arsenic Toxicity)",
+    "transmission": "Geogenic arsenic contamination in groundwater",
+    "triggers": {
+      "waterSource": ["Borewell", "Open Well"],
+      "h2sResult": "Negative",
+      "taste": ["Metallic"]
+    },
+    "symptoms": {
+      "required": ["Skin Irritation"],
+      "optional": ["Fatigue", "Headache", "Abdominal Pain", "Nausea"],
+      "minSymptomDurationDays": 5
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Never consume water from wells marked with red alert signs.",
+      "Filter water using iron-coagulation filters or specialized arsenic removal cartridges.",
+      "Promote community rain-water harvesting as an alternate drinking source.",
+      "Seek specialized dermatological screening for keratosis and skin lesions."
+    ]
+  },
+  {
+    "id": "DIS-008",
+    "name": "Chemical Lead Contamination",
+    "transmission": "Corroding lead service lines or industrial effluent leakage",
+    "triggers": {
+      "waterSource": ["Municipal Tap", "Borewell"],
+      "h2sResult": "Negative",
+      "taste": ["Metallic"],
+      "appearance": ["Clear", "Yellowish"]
+    },
+    "symptoms": {
+      "required": ["Headache"],
+      "optional": ["Abdominal Pain", "Fatigue", "Nausea", "Vomiting"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Run municipal taps for 2 minutes before using water to flush standing lead.",
+      "Use only cold water for cooking and baby formula; hot water dissolves lead faster.",
+      "Use certified lead-removing filters (look for NSF/ANSI Standard 53).",
+      "Consult local pediatric clinics to check blood lead levels in children."
+    ]
+  },
+  {
+    "id": "DIS-009",
+    "name": "Giardiasis",
+    "transmission": "Giardia lamblia parasite cysts in feces-contaminated fresh water",
+    "triggers": {
+      "waterSource": ["River", "Pond", "Open Well", "Canal"],
+      "h2sResult": "Positive",
+      "appearance": ["Turbid", "Brownish"]
+    },
+    "symptoms": {
+      "required": ["Diarrhea", "Abdominal Pain"],
+      "optional": ["Fatigue", "Nausea", "Headache"],
+      "minSymptomDurationDays": 4
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Filter water using a filter certified for cyst removal (NSF 53/58).",
+      "Boil water for at least 1 minute (or 3 minutes at higher altitudes) to kill cysts.",
+      "Avoid raw foods that cannot be peeled, or wash them in boiled water.",
+      "Consult a health practitioner for stool tests and anti-protozoal medication."
+    ]
+  },
+  {
+    "id": "DIS-010",
+    "name": "Cryptosporidiosis",
+    "transmission": "Cryptosporidium oocysts resistant to typical chlorine treatment",
+    "triggers": {
+      "waterSource": ["River", "Pond", "Open Well", "Municipal Tap"],
+      "h2sResult": "Positive",
+      "visibleParticles": true
+    },
+    "symptoms": {
+      "required": ["Diarrhea"],
+      "optional": ["Vomiting", "Abdominal Pain", "Fever", "Nausea", "Fatigue"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Boil water to kill oocysts; typical chlorination alone is highly ineffective.",
+      "Use a filtration unit with an absolute pore size of 1 micron or smaller.",
+      "Isolate clinical patients and prevent swimming to avoid municipal spread.",
+      "Seek medical advice immediately for fluid management and recovery check."
+    ]
+  },
+  {
+    "id": "DIS-011",
+    "name": "Shigellosis (Bacillary Dysentery)",
+    "transmission": "Shigella bacterial contamination via fecal-oral vector",
+    "triggers": {
+      "waterSource": ["Open Well", "River", "Canal"],
+      "h2sResult": "Positive",
+      "phRange": { "min": 5.0, "max": 7.8 }
+    },
+    "symptoms": {
+      "required": ["Diarrhea", "Fever"],
+      "optional": ["Abdominal Pain", "Vomiting", "Nausea", "Fatigue"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "Critical"
+    },
+    "recommendations": [
+      "Immediately sanitize water systems and discard untreated standing storage.",
+      "Treat household water with chlorine disinfection and subsequent boiling.",
+      "Wash hands vigorously with soap before food preparation.",
+      "Visit the primary health center for antibiotic susceptibility testing."
+    ]
+  },
+  {
+    "id": "DIS-012",
+    "name": "Legionnaires' Disease",
+    "transmission": "Inhalation of aerosols from water systems contaminated with Legionella",
+    "triggers": {
+      "waterSource": ["Municipal Tap", "RO Plant"],
+      "storageMethod": ["Overhead Tank"],
+      "h2sResult": "Negative"
+    },
+    "symptoms": {
+      "required": ["Fever"],
+      "optional": ["Headache", "Fatigue", "Muscle Cramps", "Skin Irritation"],
+      "minSymptomDurationDays": 3
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Regularly disinfect overhead water storage tanks and warm water systems (above 60°C).",
+      "Clean and descale showerheads, tap aerators, and cooling systems.",
+      "Avoid generating water spray or mist from suspect municipal reservoirs.",
+      "Seek diagnostic evaluation for atypical pneumonia symptoms."
+    ]
+  },
+  {
+    "id": "DIS-013",
+    "name": "Schistosomiasis (Bilharzia)",
+    "transmission": "Cercariae larvae released by freshwater snails penetrating skin",
+    "triggers": {
+      "waterSource": ["River", "Pond", "Canal"],
+      "visibleParticles": true
+    },
+    "symptoms": {
+      "required": ["Skin Irritation"],
+      "optional": ["Fever", "Abdominal Pain", "Diarrhea", "Fatigue"],
+      "minSymptomDurationDays": 3
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Avoid wading, bathing, or washing clothes in untreated surface water.",
+      "Boil water for domestic bathing/washing, or store it for 48 hours to kill cercariae.",
+      "Implement snail control measures near agricultural water canals.",
+      "Seek medical testing and treatment with Praziquantel if exposure is confirmed."
+    ]
+  },
+  {
+    "id": "DIS-014",
+    "name": "Leptospirosis",
+    "transmission": "Leptospira spirochete bacteria excreted in rodent/animal urine",
+    "triggers": {
+      "waterSource": ["River", "Pond", "Canal", "Open Well"],
+      "h2sResult": "Positive",
+      "appearance": ["Turbid", "Brownish"]
+    },
+    "symptoms": {
+      "required": ["Fever", "Headache"],
+      "optional": ["Vomiting", "Diarrhea", "Abdominal Pain", "Fatigue", "Skin Irritation"],
+      "minSymptomDurationDays": 2
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Boil and chlorinate all drinking water. Discard flood-affected open reserves.",
+      "Avoid contact with water that might be contaminated with animal urine.",
+      "Cover skin wounds with waterproof dressings before touching water.",
+      "Consult doctors immediately for early doxycycline/penicillin regimens."
+    ]
+  },
+  {
+    "id": "DIS-015",
+    "name": "Microcystin Toxicity (Blue-Green Algal Blooms)",
+    "transmission": "Cyanobacteria toxins released during massive algal blooms",
+    "triggers": {
+      "waterSource": ["Pond", "River", "Canal"],
+      "appearance": ["Greenish"],
+      "smell": ["Musty"],
+      "taste": ["Bitter"]
+    },
+    "symptoms": {
+      "required": ["Skin Irritation"],
+      "optional": ["Abdominal Pain", "Vomiting", "Nausea", "Headache", "Diarrhea"],
+      "minSymptomDurationDays": 1
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Never consume, swim, or wash in water affected by blue-green algal blooms.",
+      "Do not boil water to treat toxins; boiling breaks cells and releases more toxin.",
+      "Use active carbon filtration combined with reverse osmosis for treatment.",
+      "Consult medical officers for skin rashes or liver function checks if ingested."
+    ]
+  },
+  {
+    "id": "DIS-016",
+    "name": "Nitrate Contamination (Blue Baby Syndrome)",
+    "transmission": "Nitrate leaching from chemical fertilizers or animal manure",
+    "triggers": {
+      "waterSource": ["Borewell", "Open Well"],
+      "h2sResult": "Negative",
+      "phRange": { "min": 6.8, "max": 8.5 }
+    },
+    "symptoms": {
+      "required": ["Fatigue"],
+      "optional": ["Headache", "Nausea", "Vomiting"],
+      "minSymptomDurationDays": 3
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Do not feed infant formula using this well water; nitrates cause methemoglobinemia.",
+      "Do not boil water to remove nitrates; boiling increases their concentration.",
+      "Install ion exchange or reverse osmosis systems to eliminate nitrates.",
+      "Seek immediate medical care if an infant shows blue or purple skin discoloration."
+    ]
+  },
+  {
+    "id": "DIS-017",
+    "name": "Cadmium Toxicity (Itai-Itai Disease)",
+    "transmission": "Heavy metal runoff from industrial waste and zinc mines",
+    "triggers": {
+      "waterSource": ["Borewell", "River"],
+      "h2sResult": "Negative",
+      "taste": ["Metallic"],
+      "phRange": { "min": 5.0, "max": 6.8 }
+    },
+    "symptoms": {
+      "required": ["Stiff Joints"],
+      "optional": ["Fatigue", "Headache", "Abdominal Pain"],
+      "minSymptomDurationDays": 10
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "High"
+    },
+    "recommendations": [
+      "Cease using water for drinking or agricultural irrigation immediately.",
+      "Install heavy-metal removing filtration systems (RO or carbon blocks).",
+      "Conduct mass-spectrometry chemical testing of the local well network.",
+      "Consult a rheumatologist or toxicologist for heavy metal body burden checks."
+    ]
+  },
+  {
+    "id": "DIS-018",
+    "name": "Agricultural Pesticide Poisoning",
+    "transmission": "Runoff of organophosphate/carbamate chemicals from farms",
+    "triggers": {
+      "waterSource": ["Canal", "River", "Open Well"],
+      "h2sResult": "Negative",
+      "smell": ["Chemical"],
+      "taste": ["Bitter"]
+    },
+    "symptoms": {
+      "required": ["Headache", "Abdominal Pain"],
+      "optional": ["Nausea", "Vomiting", "Fatigue", "Skin Irritation"],
+      "minSymptomDurationDays": 1
+    },
+    "classification": {
+      "waterStatus": "Highly Contaminated",
+      "riskLevel": "Critical"
+    },
+    "recommendations": [
+      "Do not consume water with chemical smell; boiling does not deactivate pesticides.",
+      "Use high-grade activated carbon filtration systems.",
+      "Audit agricultural pesticide application boundaries near water bodies.",
+      "Seek emergency medical help if muscle twitching or breathing issues occur."
+    ]
+  },
+  {
+    "id": "DIS-019",
+    "name": "Copper Poisoning (Toxicity)",
+    "transmission": "Corrosion of copper plumbing pipes or agricultural copper sprays",
+    "triggers": {
+      "waterSource": ["Municipal Tap", "Borewell"],
+      "h2sResult": "Negative",
+      "appearance": ["Greenish"],
+      "taste": ["Metallic", "Bitter"]
+    },
+    "symptoms": {
+      "required": ["Vomiting", "Nausea"],
+      "optional": ["Diarrhea", "Abdominal Pain", "Headache"],
+      "minSymptomDurationDays": 1
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Flush water system by running cold taps for 1 minute before domestic use.",
+      "Avoid storing acidic foods or water in copper containers.",
+      "Install reverse osmosis or copper-reducing filtration systems.",
+      "Check liver function tests if chronic gastrointestinal symptoms persist."
+    ]
+  },
+  {
+    "id": "DIS-020",
+    "name": "High Salinity / TDS Syndrome",
+    "transmission": "Over-extraction of groundwater leading to saltwater intrusion",
+    "triggers": {
+      "waterSource": ["Borewell"],
+      "h2sResult": "Negative",
+      "taste": ["Salty"],
+      "phRange": { "min": 7.8, "max": 9.0 }
+    },
+    "symptoms": {
+      "required": [],
+      "optional": ["Skin Irritation", "Fatigue", "Headache"],
+      "minSymptomDurationDays": 4
+    },
+    "classification": {
+      "waterStatus": "Contaminated",
+      "riskLevel": "Medium"
+    },
+    "recommendations": [
+      "Install reverse osmosis (RO) system to reduce Total Dissolved Solids (TDS).",
+      "Avoid using saline water for domestic irrigation as it damages soil structure.",
+      "Blend borewell water with rain-harvested water to improve quality.",
+      "Monitor blood pressure if consuming highly saline borewell water."
+    ]
+  }
+]

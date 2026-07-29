@@ -1,0 +1,29 @@
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+
+# Node / JS Dependencies
+node_modules/
+dist/
+build/
+.env
+
+# Databases & Local Storage
+*.db
+*.sqlite
+*.sqlite3
+backend/aquasafe.db
+
+# Models / Cache (Generated)
+ml/models/*.json
+!ml/models/.gitkeep
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
