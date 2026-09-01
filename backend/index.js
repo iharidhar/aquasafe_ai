@@ -899,6 +899,34 @@ Please provide the prediction output in the requested JSON structure.
   return basePrediction;
 }
 
+// Health Check Endpoint for Render & Monitoring
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    system: 'AquaSafe AI Backend Engine',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// GET endpoints for cases and volunteers
+app.get('/api/cases', async (req, res) => {
+  try {
+    const casesList = await getCasesFromDB();
+    res.json(casesList);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/volunteers', async (req, res) => {
+  try {
+    const volList = await getVolunteersFromDB();
+    res.json(volList);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // User login API (verifies credentials from database)
 app.post('/api/login', async (req, res) => {
   try {
