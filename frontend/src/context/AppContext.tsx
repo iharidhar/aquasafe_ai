@@ -702,10 +702,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     let reconnectTimer: any;
 
     const connectWS = () => {
-      const isHttps = window.location.protocol === 'https:';
-      const wsProtocol = isHttps ? 'wss:' : 'ws:';
-      const host = window.location.host || 'localhost:3000';
-      const wsUrl = `${wsProtocol}//${host}/ws-app`;
+      const customWsUrl = import.meta.env.VITE_WS_URL;
+      let wsUrl: string;
+      if (customWsUrl) {
+        wsUrl = customWsUrl;
+      } else if (window.location.hostname.includes('vercel.app')) {
+        wsUrl = 'wss://aquasafe-ai-1.onrender.com/ws-app';
+      } else {
+        const isHttps = window.location.protocol === 'https:';
+        const wsProtocol = isHttps ? 'wss:' : 'ws:';
+        const host = window.location.host || 'localhost:3000';
+        wsUrl = `${wsProtocol}//${host}/ws-app`;
+      }
       console.log('[WebSocket Client] Connecting to:', wsUrl);
       
       socket = new WebSocket(wsUrl);

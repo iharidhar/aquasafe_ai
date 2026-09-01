@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://aquasafe-ai-1.onrender.com/api/:path*"
+    },
+    {
+      "source": "/ws-app",
+      "destination": "https://aquasafe-ai-1.onrender.com/ws-app"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
